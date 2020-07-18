@@ -1,0 +1,1 @@
+token = "Replace this string with your discord API token"
