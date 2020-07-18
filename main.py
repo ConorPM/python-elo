@@ -89,5 +89,9 @@ def add_to_sqlite(usr, opp, usr_score, opp_score, game):
     conn.commit()
     elo.get_new_elo(usr, opp, result, game)
 
+def main():
+    client.run(TOKEN)
+    return 0
 
-client.run(TOKEN)
+if __name__ =="__main__":
+    main()
