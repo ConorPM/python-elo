@@ -52,6 +52,7 @@ class ResultProcessor:
                       )
 
             conn.commit()
+            conn.close()
             elo = Elo(self.winner, self.loser, self.game)
             elo.get_new_elo()
 
@@ -61,3 +62,4 @@ class ResultProcessor:
         c.execute('''CREATE TABLE IF NOT EXISTS {}
               (winner text, loser text, winner_score int, loser_score int)'''.format(self.game))
         conn.commit()
+        conn.close()
