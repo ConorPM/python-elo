@@ -3,6 +3,7 @@ from elo import Elo
 
 results_database = "results.db"
 
+
 class ResultProcessor:
     def __init__(self, game, user, opponent, user_score, opponent_score):
         self.game = game
