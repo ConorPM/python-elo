@@ -35,6 +35,7 @@ class Elo:
         c = conn.cursor()
         c.execute("INSERT or IGNORE INTO {} (player, elo) VALUES ('{}', {})".format(self.game, self.winner, DEFAULT_ELO))
         c.execute("INSERT or IGNORE INTO {} (player, elo) VALUES ('{}', {})".format(self.game, self.loser, DEFAULT_ELO))
+        conn.commit()
         conn.close()
 
     def get_winner_probability(self, winner_rating, loser_rating):
