@@ -47,11 +47,8 @@ class Elo:
         return p
 
     def calculate_elo(self, winner_rating, loser_rating, usr_prob, opp_prob):
-        winner_rating = winner_rating + k * (1 - usr_prob)
-        print("{}'s new rating = {}".format(self.winner, winner_rating))
-        loser_rating = loser_rating + k * (0 - opp_prob)
-        print("{}'s new rating = {}".format(self.loser, loser_rating))
-
+        winner_rating = round(winner_rating + k * (1 - usr_prob))
+        loser_rating = round(loser_rating + k * (0 - opp_prob))
         return [winner_rating, loser_rating]
 
     def update_elo(self, new_elo):
