@@ -66,6 +66,6 @@ class Elo:
         conn = sqlite3.connect(elo_database)
         c = conn.cursor()
         c.execute('''CREATE TABLE IF NOT EXISTS {}
-            (player text, elo int)'''.format(self.game))
+            (player text PRIMARY KEY, elo int)'''.format(self.game))
         conn.commit()
         conn.close()
